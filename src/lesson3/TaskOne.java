@@ -5,11 +5,10 @@ import java.util.ArrayList;
 
 public class TaskOne {
 
-    private static char[] arrGlobal;
-    private static List<Integer> indexesGlobal;
-
+    private static char[] arr;
+    private static List<Integer> indexes;
+    public static List<List<Integer>> ans;
     public static void main(String[] args) {
-        TaskOne ans = new TaskOne();
 
         String s = "5? + ?2 = 99".replaceAll(" ","");
         char[] arr = s.toCharArray();
@@ -20,16 +19,12 @@ public class TaskOne {
                 indexes.add (i);
             }
         }
-
-        arrGlobal = arr;
-        indexesGlobal = indexes;
-
         System.out.println(arr);
         System.out.println(indexes);
 
+        int k = indexes.size();
     }
-
-        List<List<Integer>> ans;
+        //List<List<Integer>> ans;
         public List<List<Integer>> combine(int k) {
             ans = new ArrayList<>();
             helper(new ArrayList<>(), k);
